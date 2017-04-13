@@ -20,7 +20,6 @@ Open VSCode from the same terminal code .
 
 
 ## Module change conflict
-
-Change module name as per new update that is about to come. - done
+Module name changed. It will soon hit new template. - done
 
 https://github.com/fable-compiler/fable-elmish/pull/68
