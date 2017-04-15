@@ -7,6 +7,7 @@
     <Compile Include="src/Global.fs" />
     <!-- About -->
     <Compile Include="src/About/View.fs" />
+    <Compile Include="src/AboutSecond/View.fs" />
     <!-- Counter -->
     <Compile Include="src/Counter/Types.fs" />
     <Compile Include="src/Counter/State.fs" />
@@ -15,6 +16,10 @@
     <Compile Include="src/Home/Types.fs" />
     <Compile Include="src/Home/State.fs" />
     <Compile Include="src/Home/View.fs" />
+    <!-- Dashboard -->
+    <Compile Include="src/Dashboard/Types.fs" />
+    <Compile Include="src/Dashboard/View.fs" />
+    <Compile Include="src/Dashboard/State.fs" />
     <!-- Navbar -->
     <Compile Include="src/Navbar/View.fs" />
     <!-- App -->

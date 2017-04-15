@@ -4,12 +4,16 @@ type Page =
   | Home
   | Counter
   | About
+  | AboutSecond
+  | Dashboard
 
 let toHash =
   function
   | About -> "#about"
   | Counter -> "#counter"
   | Home -> "#home"
+  | AboutSecond -> "#aboutsecond"
+  | Dashboard -> "#dashboard"
 
 module Helpers =
 

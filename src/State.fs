@@ -12,6 +12,8 @@ let pageParser: Parser<Page->Page,Page> =
     map About (s "about")
     map Counter (s "counter")
     map Home (s "home")
+    map AboutSecond (s "aboutsecond")
+    map Dashboard (s "dashboard")
   ]
 
 let urlUpdate (result: Option<Page>) model =
@@ -25,14 +27,19 @@ let urlUpdate (result: Option<Page>) model =
 let init result =
   let (counter, counterCmd) = Counter.State.init()
   let (home, homeCmd) = Home.State.init()
+  let (dashboard, dashboardCmd) = Dashboard.State.init()
   let (model, cmd) =
     urlUpdate result
       { currentPage = Home
         counter = counter
-        home = home }
+        home = home
+        dashboard = dashboard
+         }
   model, Cmd.batch [ cmd
                      Cmd.map CounterMsg counterCmd
-                     Cmd.map HomeMsg homeCmd ]
+                     Cmd.map HomeMsg homeCmd
+                     Cmd.map DashboardMsg dashboardCmd
+                      ]
 
 let update msg model =
   match msg with
@@ -42,3 +49,6 @@ let update msg model =
   | HomeMsg msg ->
       let (home, homeCmd) = Home.State.update msg model.home
       { model with home = home }, Cmd.map HomeMsg homeCmd
+  | DashboardMsg msg ->
+      let (dashboard, dashboardCmd) = Dashboard.State.update msg model.dashboard
+      { model with dashboard = dashboard }, Cmd.map DashboardMsg dashboardCmd
